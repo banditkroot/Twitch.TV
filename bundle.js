@@ -1,6 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 
-var twitchStreams = require('twitch-get-stream')('jzkbprff40iqj646a697cyrvl0zt2m6'); // twitch now ENFORCES client id usage apparently, so this is now required.
+var twitchStreams = require('twitch-get-stream')('7wm38hmi8gpogctq8pz0slhtg9b8jhq'); // twitch now ENFORCES client id usage apparently, so this is now required.
 
 getStreamFromChannel = function(channel){
 	return twitchStreams.get(channel);
@@ -49,7 +49,7 @@ var getPlaylist = function(channel, accessToken) {
   // Get the playlist with given access token data (parsed /access_token response)
   return new Promise(function(resolve, reject) {
     request
-      .get('http://usher.twitch.tv/api/channel/hls/' + channel + '.m3u8')
+      .get('http://usher.ttvnw.net/api/channel/hls/' + channel + '.m3u')
       .set({ 'Client-ID': clid })
       .query({
         player: 'twitchweb',
